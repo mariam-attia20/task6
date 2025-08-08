@@ -1,13 +1,19 @@
 import os
 import random
 
-correct = "SHARK"
-guess = input("plz guess >> ")
 
-for i in range(5):
-   if guess[0] == correct[0]:
-        print(f"{guess[0]}" ,  end = " ")
-   elif guess[0] in correct:
-        print(f"{guess[0]}" , end = " ")
-   else:
-         print(guess[0] , end=" ")
+green = "\033[42m"
+yellow = "\033[43m"
+rest = "\033[0m"
+
+correct = "SHARK"
+
+for h in range(5):#5 chance
+  guess = input("plz guess >> ").upper()
+  for i in range(5):#check the word
+     if guess[i] == correct[i]:
+          print(f"{green}{guess[i]}{rest}" ,  end = " ")
+     elif guess[i] in correct:
+          print(f"{yellow}{guess[i]}{rest}" , end = " ")
+     else:
+          print(guess[i] , end=" ")
